@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      /* * {
+        flex-wrap: nowrap;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- O flex-flow, é simplesmente um atalho para as propriedades
+        `flex-direction` e `flex-wrap` respectivamente -->
+      <!-- O uso do flex-flow é mais incomum, uma vez que normalmente quando
+      o container é mudado para `flex-direction: column` geralmente queremos
+      manter o padrão do `flex-wrap` para `nowrap` que é para não quebrar.
+      E quando mudamos o container para `flex-wrap: wrap`, queremos manter o
+      padrão do `flex-direction` que é `row` -->
+      <h1>flex-flow: row nowrap;</h1>
+      <!-- Aqui, define-se o `flex-direction: row` e o `flex-wrap: nowrap;`
+      com flex-flow: row nowrap;-->
+      <!-- Aqui os elementos filhos estouram a div pai -->
+      <section class="container row-nowrap">
+        <div class="item">TesteDoItem1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+      </section>
+      
+      <h1>flex-flow: row wrap;</h1>
+      <!-- Aqui, define-se o `flex-direction: row` e o `flex-wrap: wrap;`
+      com flex-flow: row wrap;-->
+      <section class="container row-wrap">
+        <div class="item">TesteDoItem1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+      </section>
+      
+      <h1>flex-flow: column-nowrap;</h1>
+      <!-- Aqui, define-se o `flex-direction: column` e o `flex-wrap: wrap;`
+      com flex-flow: row nowrap;-->
+      <section class="container column-nowrap">
+        <div class="item">TesteDoItem1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

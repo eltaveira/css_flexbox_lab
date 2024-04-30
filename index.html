@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-self</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>align-self: multiplos;</h1>
+      <section class="container">
+        <div class="item flex-end">1</div>
+        <div class="item flex-start">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <div class="item center">Teste 4</div>
+      </section>
+      
+      <h1>align-self: multiplos;</h1>
+      <section class="container">
+        <!-- Ambos os elementos com baseline se alinharam a partir do conteúdo
+        e note que a div1 define um padding-top, e por tanto a div2 se alinha
+        a ele-->
+        <div class="item baseline">1</div>
+        <div class="item baseline">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <div class="item center">Teste 4</div>
+      </section>
+      
+      <h1>align-self: stretch; // align-items: flex-end;</h1>
+      <section class="container align-items">
+        <div class="item">1</div>
+        <div class="item stretch">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <!-- div3 acaba tendo o mesmo comportamento que o stretch do div2, porém
+        o div3 só tem um conteúdo maior. -->
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <h1>align-self: multiplos;</h1>
+      <section class="container column">
+        <div class="item flex-end">1</div>
+        <div class="item flex-start">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <div class="item center">Teste 4</div>
+      </section>
+      
+      <h1>align-self: multiplos;</h1>
+      <section class="container column">
+        <div class="item baseline">1</div>
+        <div class="item baseline">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <div class="item center">Teste 4</div>
+      </section>
+      
+      <h1>align-self: stretch; // align-items: flex-end;</h1>
+      <section class="container column align-items">
+        <div class="item">1</div>
+        <div class="item stretch">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo Esse Mesmo.</div>
+        <div class="item">Teste 4</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

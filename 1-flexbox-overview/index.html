@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>display: block;</h1>
+      <!--  a section é display block e seus filhos também -->
+      <!-- display: block sempre ocupa tela toda -->
+      <!--  essa section está com margin: 0 auto para alinhamento -->
+      <section class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>display: flex;</h1>
+      <!-- ao adicionar flex, o container se torna flex -->
+      <!--  os itens se mantém em display bloc, porém o comportamento -->
+      <!-- não é de display block -->
+      <section class="container flex">
+        <!--  	no display flex, o tamanho do item é exatamente o tamanho do conteúdo, vide abaixo Teste 1	 -->
+        <div class="item">Teste 1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>display: flex;</h1>
+      <section class="container flex">
+        <!-- 	 Aqui, os itens estouram a div container -->
+        <!-- 	 O conteúdo é quebrado aqui, então Teste 1, é quebrado no espaço vazio quando muitos items são adicionados -->
+        <!-- Esse é o comportamento padrão do display flex -->
+        <div class="item">Teste 1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">Teste 3</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+      </section>
+
+      <h1>display: flex;</h1>
+      <section class="container flex flex-wrap">
+        <!-- Quando o flex-wrap: wrap, é adicionado, os elementos deixam de quebrar -->
+        <!-- o conteúdo, e o elemento container, passa a quebrar os itens -->
+        <!-- `flex-wrap: nowrap` é o padrão do display: flex, e significa não quebre os itens -->
+        <!-- mas quebre o conteúdo dentro dos itens se possível -->
+        <div class="item">Teste 1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">Teste 3</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+      </section>
+
+      <h1>display: flex; // flex-item-1</h1>
+      <section class="container flex">
+        <!-- Se inserido os itens forem definidos como `flex: 1` automaticamente
+        esses itens passam a crescer, e não se ajustam apenas ao conteúdo. -->
+        <!-- Porém ainda seguem o mesmo comportamento de quebrar o conteúdo e 
+        estourar a div container, caso seja `flex-wrap: nowrap` -->
+        <div class="item flex-item-1">Teste 1</div>
+        <div class="item flex-item-1">Teste 2</div>
+        <div class="item flex-item-1">Teste 3</div>
+        <div class="item flex-item-1">Teste 4</div>
+        <div class="item flex-item-1">Teste 5</div>
+        <div class="item flex-item-1">Teste 6</div>
+        <div class="item flex-item-1">Teste 7</div>
+      </section>  
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

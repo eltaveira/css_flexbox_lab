@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      /* * {
+        flex-wrap: nowrap;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- O justify-content só tem utilizada quando os filhos não se expandem
+      por toda a largura do container pai. Isso significa que os filhos não podem
+      estar com `flex: 1`. O justify-content é uma propriedade do container e atua
+      em ambas as direções `flex-direction: row;` e `flex-direction: column;` -->
+
+      <h1>justify-content: flex-start;</h1>
+      <!-- `justify-content: flex-start` -->
+      <section class="container flex-start">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: flex-end;</h1>
+      <!-- `justify-content: flex-end` -->
+      <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: center;</h1>
+      <!-- `justify-content: center;` -->
+      <section class="container center">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-between;</h1>
+      <!-- justify-content: space-between; esse valor posiciona os elementos 
+      filhos, totalmente nas extremidades -->
+      <section class="container space-between">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-around;</h1>
+      <!-- justify-content: space-around; já o space-around, mantém o espaço
+      de duas vezes o espaço antes do primeiro elemento e o espaço depois do
+      último elemento. Ou seja, os espaços entre os elementos é um espaço
+      duas vezes o espaço das extremidades -->
+      <section class="container space-around">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-evenly;</h1>
+      <!-- justify-content: space-evenly; já o space-evenly, mantém os espaços
+      entre os elementos, exatamente iguais, isso incluindo o espaço do inicio
+      e fim -->
+      <section class="container space-evenly">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-around; // itens com flex: 1;</h1>
+      <!-- nenhum justify-content funciona quando os elementos são flex: 1 -->
+      <section class="container space-around">
+        <div class="item flex">1</div>
+        <div class="item flex">Teste 2</div>
+        <div class="item flex">3</div>
+        <div class="item flex">4</div>
+      </section>
+
+      <h1>justify-content: flex-start; // column</h1>
+      <!-- `justify-content: flex-start;` aqui, trás o mesmo comportamento 
+      de quando os elementos estão em linha, a diferença aqui, é que o eixo
+      de movimentação dos elementos é vertical e não horizontal -->
+      <!-- É preciso que container tenha com direção em `column` tenha um
+      `min-height: 200px;` definido, pois ao contrário, o container iria ser
+      redimensionado ao tamanho necessário para os itens -->
+      <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: flex-end; // column</h1>
+      <section class="container flex-end column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: center; // column</h1>
+      <section class="container center column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-between; // column</h1>
+      <section class="container space-between column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-around; // column</h1>
+      <section class="container space-around column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-evenly; // column</h1>
+      <section class="container space-evenly column">
+        <div class="item">1</div>
+        <div class="item">Teste 2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+      </section>
+
+      <h1>justify-content: space-around; // column // itens com flex: 1;</h1>
+      <section class="container space-around column">
+        <div class="item flex">1</div>
+        <div class="item flex">Teste 2</div>
+        <div class="item flex">3</div>
+        <div class="item flex">4</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

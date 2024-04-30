@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex Box</title>
+    <style>
+      /* * {
+        flex-wrap: nowrap;
+      } */
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <!-- O `align-items` ainda atua no container pai. Essa propriedade
+      diferente da propriedade align-items que descola/distribui os filhos
+      no eixo horizontal ou vertical. Esse altera a disposição desses itens
+      no seu próprio eixo, definido `flex-direction`   -->
+      <h1>align-items: stretch;</h1>
+      <!-- `align-items: stretch` expande os elementos no seu próprio eixo,
+      fazendo com que eles cresçam até a borda, nesse caso, todos os
+      elementos filhos que estão em linha -->
+      <!-- Veja que o height da div container, é relacionado ao maior item
+      filho que existir, e no stretch todos os outros items irão se
+      expandir ao tamanho desse item com o maior height -->
+      <section class="container stretch">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <h1>align-items: flex-start;</h1>
+      <!-- Aqui `align-items: flex-start` movem os elementos para a parte
+      superior do eixo horizontal. E `flex-direction` ainda é `row` -->
+      <!-- Os items aqui, ocupam exatamente seus tamanhos suficientemente
+      necessário -->
+      <section class="container flex-start">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+
+      <!-- Aqui `align-items: flex-end` movem os elementos para a parte
+      inferior do eixo horizontal. E `flex-direction` ainda é `row` -->
+      <!-- Os items aqui, ocupam exatamente seus tamanhos suficientemente
+      necessário -->
+      <h1>align-items: flex-end;</h1>
+      <section class="container flex-end">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- Aqui `align-items: center` movem os elementos exatamente para o
+      centro do eixo horizontal. E `flex-direction` ainda é `row` -->
+      <!-- Os items aqui, ocupam exatamente seus tamanhos suficientemente
+      necessário -->
+      <h1>align-items: center;</h1>
+      <section class="container center">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- O `align-items: baseline;` alinha os elementos em relação a seus
+      conteúdos, nesse caso, em relação ao texto -->
+      <h1>align-items: baseline;</h1>
+      <section class="container baseline">
+        <div class="item teste">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- COM `flex-direction: column`, o eixo muda, agora os elementos se
+      expandem para as extremidades laterais, ou seja, se expandem
+      horizontalmente -->
+      <h1>align-items: flex-stretch; // column</h1>
+      <section class="container stretch column">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- alinham-se a esquerda -->
+      <h1>align-items: flex-start; // column</h1>
+      <section class="container flex-start column">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- alinham-se a direita -->
+      <h1>align-items: flex-end; // column</h1>
+      <section class="container flex-end column">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- alinham-se ao centro -->
+      <h1>align-items: center; // column</h1>
+      <section class="container center column">
+        <div class="item">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+
+      <!-- alinham-se em relação ao conteúdo -->
+      <h1>align-items: baseline; // column</h1>
+      <section class="container baseline column">
+        <div class="item teste">1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+      </section>
+      
+      <!-- O `justify-content: center;` garante que o elemento seja posicionado
+      ao meio em um container com `flex-direction: row`. Enquanto o
+      `align-items: center;` faz com que o elemento não se expanda até as
+      extremidades superior e inferior, e sim, se adéque ao seu conteúdo
+      sendo posicionado ao meio.
+      O efeito é que o elemento é centralizado ao meio absoluto -->
+      <!-- Observe que a section tem um height fixo definido maior que o item
+      para que seja possível observar o efeito do `align-items: center;`-->
+      <h1>align-items: center; e justify-content: center;</h1>
+      <section class="container alinhamento-central">
+        <div class="item">Esse item está verticalmente alinhado ao centro.</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

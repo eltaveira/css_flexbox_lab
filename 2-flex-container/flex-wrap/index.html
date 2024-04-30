@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- observe que `flex: 1;` está definido em todos os itens -->
+      <h1>flex-wrap: nowrap;</h1>
+      <section class="container nowrap">
+      <!-- O nome grudado foi necessário pois eu preciso definir um conteúdo que
+        não possa ser quebrado. Como uma palavra ou uma imagem. Se fosse uma
+        frase, ele quebraria as linhas da frase antes de ultrapassar o container.
+      -->
+      <!-- O padrão do flex, é `flex-wrap: nowrap;`, porém, se o conteúdo de
+      dentro de um item do container for um texto que tiver separação entre as
+      palavras, esse texto vai ser quebrado -->
+        <div class="item">Teste Do Item1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+        <div class="item">TesteDoItem4</div>
+      </section>
+      
+      <h1>flex-wrap: wrap;</h1>
+      <!-- `flex-wrap: wrap;` quebra os itens fazendo om que eles caiam pra vão
+      para baixo, quando não couberem no container pai -->
+      <section class="container wrap">
+        <div class="item">TesteDoItem1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+      </section>
+      
+      <h1>flex-wrap: wrap-reverse;</h1>
+      <!-- `flex-wrap: wrap-reverse;` faz o mesmo que wrap, porém altera a ordem
+      em que os elementos são exibidos na tela, em linha começando do último
+      ao primeiro -->
+      <section class="container wrap-reverse">
+        <div class="item">TesteDoItem1</div>
+        <div class="item">TesteDoItem2</div>
+        <div class="item">TesteDoItem3</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

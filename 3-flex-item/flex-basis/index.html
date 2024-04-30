@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex-basis</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>flex-basis: auto;</h1>
+      <section class="container">
+        <!-- se definido o `flex-grow` para `0` cada item se expande até o
+        máximo do conteúdo, não passando disso -->
+        <!-- se o `flex-basis: auto` for removido do css, nada muda pois ele
+        já é o padrão -->
+        <div class="item basis-auto">Palavra 1</div>
+        <!-- com `flex-basis: auto` e `flex-grow: 1` o largura é definida ao
+        redor do conteúdo 2 -->
+        <!-- se o `flex-basis: auto` for removido do css, nada muda pois ele
+        já é o padrão -->
+        <div class="item basis-auto">2</div>
+        <div class="item basis-auto-grow-2">3</div>
+        <div class="item basis-auto-width">4</div>
+        <div class="item basis-auto-grow-0">5</div>
+      </section>
+      
+      <section class="container overlay">
+        <div class="item basis-auto">Palavra 1</div>
+        <div class="item basis-auto">2</div>
+        <!-- `flex-grow: 2` e `flex-basis: auto` resulta em 2 vezes a largura
+        após o conteúdo, em relação ao item de cima -->
+        <!-- `flex-grow` não  tenta influenciar no tamanho do flex item
+        e sim influência no que vem antes e depois do conteúdo interno do
+        flex-item -->
+        <div class="item basis-auto-grow-2">3</div>
+        <div class="item basis-auto-width">4</div>
+        <!-- não definindo o `auto-grow` ou definindo o `auto-grow: 0` o item
+        não cresce, é se adéqua a seu conteúdo  -->
+        
+        
+        <!-- se `basis-auto-grow-0` for removido daqui, nada acontece, pois os
+        padrões são `flex-grow: 0` & `flex-basis: auto` -->
+        <div class="item basis-auto-grow-0">5</div>
+      </section>
+      
+      <h1>flex-basis: 0;</h1>
+      <section class="container">
+        <!-- quando `flex-basis` é `0` os itens tem tamanhos iguais independente
+        do conteúdo que estiver dentro dele -->
+        <div class="item basis-0">Test de Cont</div>
+        <div class="item basis-0">2</div>
+        <div class="item basis-0-grow-2">Palavra</div>
+        <div class="item basis-0-width">4</div>
+        <div class="item basis-0-grow-0">5</div>
+      </section>
+      
+      <section class="container overlay">
+        <div class="item basis-0">Test de Cont</div>
+        <div class="item basis-0">2</div>
+        <div class="item basis-0-grow-2">Palavra</div>
+        <div class="item basis-0-width">4</div>
+        <div class="item basis-0-grow-0">5</div>
+      </section>
+      
+      <h1>flex-basis: número;</h1>
+      <section class="container basis-numero-container">
+        <div class="item basis-110">1</div>
+        <div class="item basis-110">12</div>
+        <div class="item basis-110">12345678910</div>
+        <div class="item basis-300">1234</div>
+        <div class="item basis-110-porcento">1</div>
+        <div class="item basis-110-porcento">12</div>
+        <div class="item basis-110-porcento">123</div>
+        <div class="item basis-110-porcento">1234</div>
+      </section>
+      
+      <h1>flex-basis: número; // Diferente Conteúdo</h1>
+      <section class="container basis-numero-container">
+        <div class="item basis-110">Conteúdo Grande</div>
+        <div class="item basis-110">PalavraMaior</div>
+        <div class="item basis-110">Oi</div>
+      </section>
+      
+      <h1>flex-basis: número; // grow 1</h1>
+      <section class="container basis-numero-container">
+        <div class="item basis-110-grow-1">1</div>
+        <div class="item basis-110-grow-1">12</div>
+        <div class="item basis-110-grow-1">1234</div>
+        <div class="item basis-110-grow-1">12345</div>
+        <div class="item basis-600-grow-1">5</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

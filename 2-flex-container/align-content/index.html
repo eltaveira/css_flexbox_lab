@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>align-content</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- a propriedade `align-content` alinha as linhas de dentro do container
+      em relação ao eixo vertical. Basicamente isso significa que quando o
+      container tem o seu `flex-wrap` definido como `wrap` e há uma quantidade
+      suficiente de filhos que faça mais linhas serem formadas, o
+      align-content é capaz de alterar a disposição dessas linhas no eixo
+      vertical -->
+      <!-- `align-content` SEMPRE PRECISA DO `flex-wrap` como `wrap` para surtir
+      efeito, bem como o height do container pai, precisa ser maior do que
+      a soma da largura das linhas quebradas -->
+      <!-- POR PADRÃO `align-content`é `stretch` -->
+      <h1>align-content: stretch;</h1>
+      <!-- `flex: 1;`, `flex-wrap: wrap;` e `align-content: stretch` faz com que
+      as linhas ocupem todo o espaço vertical. o `flex: 1` age no eixo horizontal
+      fazendo com que os itens ocupem todo espaço horizontal -->
+      <section class="container stretch">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: flex-start;</h1>
+      <!-- `align-content: flex-start;` as linhas ficam posicionadas no topo -->
+      <!-- O tamanho da linha, é definido pelo maior item, e o height precisa ser
+      definido para que o flex-start surta efeito -->
+      <section class="container flex-start">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: flex-end;</h1>
+      <!-- `align-content: flex-end;` as linhas ficam posicionadas no rodapé -->
+      <section class="container flex-end">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: center;</h1>
+      <!-- `align-content: center;` as linhas ficam posicionadas no meio -->
+      <section class="container center">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: space-between;</h1>
+      <!-- `align-content: space-between;` igualmente separadas sem deixar espaço
+      nas extremidades -->
+      <section class="container space-between">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: space-around;</h1>
+      <!-- `align-content: space-around;` as linhas ficam separadas, e o espaço
+      do meio é o dobro do espaço da extremidades superior e inferior -->
+      <section class="container space-around">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+
+      <h1>align-content: space-evenly;</h1>
+      <!-- `align-content: space-evenly;` as linhas ficam separadas, porém em
+      espaços exatamente iguais, inclusive nas extremidades -->
+      <section class="container space-evenly">
+        <div class="item">TestandoPalavra1</div>
+        <div class="item">Teste 2 do Item</div>
+        <div class="item">Teste 3 do Item Agora Mesmo</div>
+        <div class="item">Teste 4</div>
+        <div class="item">Teste 5</div>
+        <div class="item">Teste 6</div>
+        <div class="item">Teste 7</div>
+        <div class="item">Teste 8</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- o `flex-direction` é sempre definido no elemento pai -->
+      <h1>flex-direction: row;</h1>
+      <section class="container row">
+        <!-- o `flex-direction` define a direção dos elementos filhos do
+        flex container. por padrão é `flex-direction: row` -->
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </section>
+      
+      <h1>flex-direction: row-reverse;</h1>
+      <!-- o `flex-direction: row-reverse` altera a ordem em que os elementos
+      são renderizados em linha -->
+      <section class="container row-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </section>
+      
+      <h1>flex-direction: column;</h1>
+      <!-- `flex-direction: column;` -->
+      <section class="container column">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </section>
+      
+      <h1>flex-direction: column-reverse;</h1>
+      <!-- flex-direction: column-reverse; é a mesma coisa do
+        `flex-direction: column` porém inverte os itens -->
+      <section class="container column-reverse">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+      </section>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
